@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PMKey - Quản lý thành viên</title>
+    <link rel="stylesheet" href="css/member-management.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+      <div class="header-left">
+        <!-- Empty left section -->
+      </div>
+      
+      <!-- Centered search bar -->
+      <div class="search-container-wrapper">
+        <div class="search-container">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" placeholder="Tìm kiếm thành viên..." class="search-input" />
+        </div>
+      </div>
+      
+      <div class="header-right">
+        <div class="header-actions">
+          <button class="action-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+            <span class="notification-badge">5</span>
+          </button>
+          
+          <button class="action-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+            </svg>
+            <span class="notification-badge">3</span>
+          </button>
+        </div>
+        
+        <div class="date-display">
+          20/05/2025
+        </div>
+      </div>
+    </header>
+    <div class="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+          <span>PMKey</span>
+        </div>
+      </div>
+
+      <div class="sidebar-content">
+        <div class="profile-section">
+          <div class="avatar">
+            <img src="/placeholder.svg?height=50&width=50" alt="Profile" />
+          </div>
+          <div class="profile-info">
+            <h3>Tên</h3>
+            <p>Leader</p>
+          </div>
+        </div>
+
+        <div class="menu-section">
+          <ul class="menu-list">
+            <li>
+              <a href="dashboard.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="14" width="7" height="7"></rect>
+                  <rect x="3" y="14" width="7" height="7"></rect>
+                </svg>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li>
+              <a href="project-management.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                </svg>
+                <span>Dự án</span>
+              </a>
+            </li>
+            <li>
+              <a href="task-management.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 11l3 3L22 4"></path>
+                  <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                </svg>
+                <span>Nhiệm vụ</span>
+              </a>
+            </li>
+            <li>
+              <a href="member-management.html" class="active">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                <span>Thành viên</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="stats-section">
+          <div class="stat-item">
+            <div class="stat-label">SỐ LƯỢNG THÀNH VIÊN</div>
+            <div class="stat-value">
+              <span>70</span>
+              <div class="badge">+5</div>
+            </div>
+          </div>
+
+          <div class="stat-item">
+            <div class="stat-label">TỔNG DỰ ÁN</div>
+            <div class="stat-value">
+              <span>1,205</span>
+            </div>
+          </div>
+
+          <div class="stat-item">
+            <div class="stat-label">TASK ĐANG XỬ LÝ</div>
+            <div class="stat-value">
+              <span>45</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="user-menu">
+          <div class="avatar-small">
+            <img src="/placeholder.svg?height=40&width=40" alt="User" />
+          </div>
+          <div class="user-info">
+            <span class="user-name">User</span>
+            <span class="user-role">Team Leader</span>
+          </div>
+          <button class="logout-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+              <polyline points="16 17 21 12 16 7"></polyline>
+              <line x1="21" y1="12" x2="9" y2="12"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="dashboard-layout">
+      <div class="main-content">
+        <div class="content-wrapper">
+          <div class="page-header">
+            <h1 class="page-title">Quản lý thành viên</h1>
+            <button class="btn-primary" data-bs-toggle="modal" data-bs-target="#addMemberModal">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+              Thêm thành viên mới
+            </button>
+          </div>
+
+          <!-- thêm nhân viên -->
+               <div class="modal fade" id="addMemberModal" tabindex="-1" aria-labelledby="addMemberModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <form id="addMemberForm">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="addMemberModalLabel">Thêm Thành Viên Dự Án</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
+                  </div>
+                  <div class="modal-body">
+
+                    <div class="mb-3">
+                      <label class="form-label">Thành viên</label>
+                      <input type="text" class="form-control" name="memberName" placeholder="Nhập tên thành viên" required>
+                    </div>
+
+                    <div class="mb-3">
+                      <label class="form-label">Vai trò</label>
+                      <input type="text" class="form-control" name="role" placeholder="Nhập vai trò (VD: Developer, Leader...)" required>
+                    </div>
+
+                    <div class="mb-3">
+                      <label class="form-label">Dự án</label>
+                      <select class="form-select" name="project" required>
+                        <option value="" disabled selected>-- Chọn dự án --</option>
+                        <option value="1">Dự án A</option>
+                        <option value="2">Dự án B</option>
+                        <option value="3">Dự án C</option>
+                      </select>
+                    </div>
+
+                    <div class="mb-3">
+                      <label class="form-label">Trạng thái</label>
+                      <select class="form-select" name="status" required>
+                        <option value="Đang tham gia">Đang Hoạt Động</option>
+                        <option value="Đang chờ">Đang Nghỉ Phép</option>
+                        <option value="Đã rời">Không Hoạt Động</option>
+                      </select>
+                    </div>
+
+                    <div class="mb-3">
+                      <label class="form-label">Ngày tham gia</label>
+                      <input type="date" class="form-control" name="joinDate" required>
+                    </div>
+
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                    <button type="submit" class="btn btn-success">Thêm</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="filter-bar">
+            <div class="filter-options">
+              <select class="filter-select">
+                <option value="">Tất cả vai trò</option>
+                <option value="developer">Developer</option>
+                <option value="designer">Designer</option>
+                <option value="manager">Manager</option>
+                <option value="tester">Tester</option>
+              </select>
+              <select class="filter-select">
+                <option value="">Tất cả trạng thái</option>
+                <option value="active">Đang hoạt động</option>
+                <option value="inactive">Không hoạt động</option>
+                <option value="vacation">Đang nghỉ phép</option>
+              </select>
+              <select class="filter-select">
+                <option value="">Tất cả dự án</option>
+                <option value="website">Website Redesign</option>
+                <option value="mobile">Mobile App Development</option>
+                <option value="marketing">Marketing Campaign</option>
+                <option value="ecommerce">E-commerce Platform</option>
+              </select>
+            </div>
+            <div class="view-options">
+              <button class="view-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="14" width="7" height="7"></rect>
+                  <rect x="3" y="14" width="7" height="7"></rect>
+                </svg>
+              </button>
+              <button class="view-btn active">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="8" y1="6" x2="21" y2="6"></line>
+                  <line x1="8" y1="12" x2="21" y2="12"></line>
+                  <line x1="8" y1="18" x2="21" y2="18"></line>
+                  <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                  <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                  <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                </svg>
+              </button>
+            </div>
+          </div>
+          
+          <!-- Table View (Default) -->
+          <div class="members-table-container">
+            <table class="members-table">
+              <thead>
+                <tr>
+                  <th>Thành viên</th>
+                  <th>Vai trò</th>
+                  <th>Dự án</th>
+                  <th>Trạng thái</th>
+                  <th>Ngày tham gia</th>
+                  <th>Thao tác</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Member 1 -->
+                <tr>
+                  <td>
+                    <div class="table-member-info">
+                      <div class="table-avatar">
+                        <img src="/placeholder.svg?height=40&width=40" alt="Member" />
+                      </div>
+                      <div class="table-member-details">
+                        <div class="table-member-name">Ai Long</div>
+                        <div class="table-member-email">ailong@example.com</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>UI/UX Designer</td>
+                  <td>Website Redesign</td>
+                  <td><span class="member-status active">Đang hoạt động</span></td>
+                  <td>01/01/2025</td>
+                  <td>
+                    <div class="table-actions">
+                      <button class="table-action-btn" data-bs-toggle="modal" data-bs-target="#editMemberModal">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                          <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                        </svg>
+                      </button>
+                      <button class="table-action-btn danger" onclick="confirm('Bạn muốn xóa nhân viên này?')">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <polyline points="3 6 5 6 21 6"></polyline>
+                          <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                        </svg>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- chỉnh sửa nhân viên -->
+                <div class="modal fade" id="editMemberModal" tabindex="-1" aria-labelledby="editMemberModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <form id="editMemberForm">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="editMemberModalLabel">Chỉnh Sửa Thành Viên</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
+                          </div>
+                          <div class="modal-body">
+
+                            <div class="mb-3">
+                              <label class="form-label">Thành viên</label>
+                              <input type="text" class="form-control" name="memberName" placeholder="Nhập tên thành viên" required>
+                            </div>
+
+                            <div class="mb-3">
+                              <label class="form-label">Vai trò</label>
+                              <input type="text" class="form-control" name="role" placeholder="Nhập vai trò (VD: Developer, Leader...)" required>
+                            </div>
+
+                            <div class="mb-3">
+                              <label class="form-label">Dự án</label>
+                              <select class="form-select" name="project" required>
+                                <option value="1">Dự án A</option>
+                                <option value="2">Dự án B</option>
+                                <option value="3">Dự án C</option>
+                              </select>
+                            </div>
+
+                            <div class="mb-3">
+                              <label class="form-label">Trạng thái</label>
+                              <select class="form-select" name="status" required>
+                                <option value="Đang tham gia">Đang tham gia</option>
+                                <option value="Đang chờ">Đang chờ</option>
+                                <option value="Đã rời">Đã rời</option>
+                              </select>
+                            </div>
+
+                            <div class="mb-3">
+                              <label class="form-label">Ngày tham gia</label>
+                              <input type="date" class="form-control" name="joinDate" required>
+                            </div>
+
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                            <button type="submit" class="btn btn-primary">Lưu</button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                <!-- Member 2 -->
+                <tr>
+                  <td>
+                    <div class="table-member-info">
+                      <div class="table-avatar">
+                        <img src="/placeholder.svg?height=40&width=40" alt="Member" />
+                      </div>
+                      <div class="table-member-details">
+                        <div class="table-member-name">Kawasaki</div>
+                        <div class="table-member-email">kawasaki@example.com</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>Full Stack Developer</td>
+                  <td>Mobile App Development</td>
+                  <td><span class="member-status active">Đang hoạt động</span></td>
+                  <td>15/02/2025</td>
+                  <td>
+                    <div class="table-actions">
+                      <button class="table-action-btn" data-bs-toggle="modal" data-bs-target="#editMemberModal">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                          <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                        </svg>
+                      </button>
+                      <button class="table-action-btn danger" onclick="confirm('Bạn muốn xóa nhân viên này?')">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <polyline points="3 6 5 6 21 6"></polyline>
+                          <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                        </svg>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                
+                <!-- Member 3 -->
+                <tr>
+                  <td>
+                    <div class="table-member-info">
+                      <div class="table-avatar">
+                        <img src="/placeholder.svg?height=40&width=40" alt="Member" />
+                      </div>
+                      <div class="table-member-details">
+                        <div class="table-member-name">Ai Binh</div>
+                        <div class="table-member-email">aibinh@example.com</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>Content Writer</td>
+                  <td>Marketing Campaign</td>
+                  <td><span class="member-status vacation">Đang nghỉ phép</span></td>
+                  <td>10/03/2025</td>
+                  <td>
+                    <div class="table-actions">
+                      <button class="table-action-btn" data-bs-toggle="modal" data-bs-target="#editMemberModal">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                          <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                        </svg>
+                      </button>
+                      <button class="table-action-btn danger" onclick="confirm('Bạn muốn xóa nhân viên này?')">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <polyline points="3 6 5 6 21 6"></polyline>
+                          <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                        </svg>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                
+                <!-- Member 4 -->
+                <tr>
+                  <td>
+                    <div class="table-member-info">
+                      <div class="table-avatar">
+                        <img src="/placeholder.svg?height=40&width=40" alt="Member" />
+                      </div>
+                      <div class="table-member-details">
+                        <div class="table-member-name">Ai James</div>
+                        <div class="table-member-email">aijames@example.com</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>QA Tester</td>
+                  <td>E-commerce Platform</td>
+                  <td><span class="member-status active">Đang hoạt động</span></td>
+                  <td>05/04/2025</td>
+                  <td>
+                    <div class="table-actions">
+                      <button class="table-action-btn" data-bs-toggle="modal" data-bs-target="#editMemberModal">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                          <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                        </svg>
+                      </button>
+                      <button class="table-action-btn danger" onclick="confirm('Bạn muốn xóa nhân viên này?')">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <polyline points="3 6 5 6 21 6"></polyline>
+                          <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                        </svg>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                
+                <!-- Member 5 -->
+                <tr>
+                  <td>
+                    <div class="table-member-info">
+                      <div class="table-avatar">
+                        <img src="/placeholder.svg?height=40&width=40" alt="Member" />
+                      </div>
+                      <div class="table-member-details">
+                        <div class="table-member-name">Nguyen Van A</div>
+                        <div class="table-member-email">nguyenvana@example.com</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>Project Manager</td>
+                  <td>Website Redesign</td>
+                  <td><span class="member-status active">Đang hoạt động</span></td>
+                  <td>20/01/2025</td>
+                  <td>
+                    <div class="table-actions">
+                      <button class="table-action-btn" data-bs-toggle="modal" data-bs-target="#editMemberModal">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                          <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                        </svg>
+                      </button>
+                      <button class="table-action-btn danger" onclick="confirm('Bạn muốn xóa nhân viên này?')">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <polyline points="3 6 5 6 21 6"></polyline>
+                          <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                        </svg>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                
+                <!-- Member 6 -->
+                <tr>
+                  <td>
+                    <div class="table-member-info">
+                      <div class="table-avatar">
+                        <img src="/placeholder.svg?height=40&width=40" alt="Member" />
+                      </div>
+                      <div class="table-member-details">
+                        <div class="table-member-name">Tran Thi B</div>
+                        <div class="table-member-email">tranthib@example.com</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>Backend Developer</td>
+                  <td>E-commerce Platform</td>
+                  <td><span class="member-status inactive">Không hoạt động</span></td>
+                  <td>15/03/2025</td>
+                  <td>
+                    <div class="table-actions">
+                      <button class="table-action-btn" data-bs-toggle="modal" data-bs-target="#editMemberModal">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                          <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                        </svg>
+                      </button>
+                      <button class="table-action-btn danger" onclick="confirm('Bạn muốn xóa nhân viên này?')">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <polyline points="3 6 5 6 21 6"></polyline>
+                          <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                        </svg>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <!-- Grid View (Hidden by default, toggle with view buttons) -->
+          <div class="members-grid" style="display: none;">
+            <!-- Member Card 1 -->
+            <div class="member-card">
+              <div class="member-header">
+                <div class="member-avatar">
+                  <img src="/placeholder.svg?height=80&width=80" alt="Member" />
+                </div>
+                <h3 class="member-name">Ai Long</h3>
+                <div class="member-role">UI/UX Designer</div>
+                <span class="member-status active">Đang hoạt động</span>
+              </div>
+              <div class="member-body">
+                <div class="member-info-grid">
+                  <div class="member-info-item">
+                    <span class="member-info-label">Email</span>
+                    <span class="member-info-value">ailong@example.com</span>
+                  </div>
+                  <div class="member-info-item">
+                    <span class="member-info-label">Điện thoại</span>
+                    <span class="member-info-value">+84 123 456 789</span>
+                  </div>
+                  <div class="member-info-item">
+                    <span class="member-info-label">Ngày tham gia</span>
+                    <span class="member-info-value">01/01/2025</span>
+                  </div>
+                  <div class="member-info-item">
+                    <span class="member-info-label">Vị trí</span>
+                    <span class="member-info-value">Hà Nội</span>
+                  </div>
+                </div>
+                
+                <div class="member-stats">
+                  <div class="member-stat-item">
+                    <div class="member-stat-value">12</div>
+                    <div class="member-stat-label">Dự án</div>
+                  </div>
+                  <div class="member-stat-item">
+                    <div class="member-stat-value">45</div>
+                    <div class="member-stat-label">Nhiệm vụ</div>
+                  </div>
+                  <div class="member-stat-item">
+                    <div class="member-stat-value">92%</div>
+                    <div class="member-stat-label">Hoàn thành</div>
+                  </div>
+                </div>
+                
+                <div class="member-skills">
+                  <div class="skills-label">Kỹ năng</div>
+                  <div class="skills-list">
+                    <span class="skill-tag">UI Design</span>
+                    <span class="skill-tag">UX Design</span>
+                    <span class="skill-tag">Figma</span>
+                    <span class="skill-tag">Adobe XD</span>
+                    <span class="skill-tag">Photoshop</span>
+                  </div>
+                </div>
+                
+                <div class="member-projects">
+                  <div class="projects-label">Dự án hiện tại</div>
+                  <div class="projects-list">
+                    <div class="project-item">
+                      <span class="project-name">Website Redesign</span>
+                      <span class="project-role">Lead Designer</span>
+                    </div>
+                    <div class="project-item">
+                      <span class="project-name">Mobile App Development</span>
+                      <span class="project-role">UI Designer</span>
+                    </div>
+                    <div class="project-item">
+                      <span class="project-name">Marketing Campaign</span>
+                      <span class="project-role">Graphic Designer</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="member-actions">
+                  <button class="btn-outline">Chi tiết</button>
+                  <button class="btn-outline">Chỉnh sửa</button>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Member Card 2 -->
+            <div class="member-card">
+              <div class="member-header">
+                <div class="member-avatar">
+                  <img src="/placeholder.svg?height=80&width=80" alt="Member" />
+                </div>
+                <h3 class="member-name">Kawasaki</h3>
+                <div class="member-role">Full Stack Developer</div>
+                <span class="member-status active">Đang hoạt động</span>
+              </div>
+              <div class="member-body">
+                <div class="member-info-grid">
+                  <div class="member-info-item">
+                    <span class="member-info-label">Email</span>
+                    <span class="member-info-value">kawasaki@example.com</span>
+                  </div>
+                  <div class="member-info-item">
+                    <span class="member-info-label">Điện thoại</span>
+                    <span class="member-info-value">+84 987 654 321</span>
+                  </div>
+                  <div class="member-info-item">
+                    <span class="member-info-label">Ngày tham gia</span>
+                    <span class="member-info-value">15/02/2025</span>
+                  </div>
+                  <div class="member-info-item">
+                    <span class="member-info-label">Vị trí</span>
+                    <span class="member-info-value">Hồ Chí Minh</span>
+                  </div>
+                </div>
+                
+                <div class="member-stats">
+                  <div class="member-stat-item">
+                    <div class="member-stat-value">8</div>
+                    <div class="member-stat-label">Dự án</div>
+                  </div>
+                  <div class="member-stat-item">
+                    <div class="member-stat-value">37</div>
+                    <div class="member-stat-label">Nhiệm vụ</div>
+                  </div>
+                  <div class="member-stat-item">
+                    <div class="member-stat-value">88%</div>
+                    <div class="member-stat-label">Hoàn thành</div>
+                  </div>
+                </div>
+                
+                <div class="member-skills">
+                  <div class="skills-label">Kỹ năng</div>
+                  <div class="skills-list">
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">MongoDB</span>
+                    <span class="skill-tag">Express</span>
+                  </div>
+                </div>
+                
+                <div class="member-projects">
+                  <div class="projects-label">Dự án hiện tại</div>
+                  <div class="projects-list">
+                    <div class="project-item">
+                      <span class="project-name">Mobile App Development</span>
+                      <span class="project-role">Lead Developer</span>
+                    </div>
+                    <div class="project-item">
+                      <span class="project-name">E-commerce Platform</span>
+                      <span class="project-role">Backend Developer</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="member-actions">
+                  <button class="btn-outline">Chi tiết</button>
+                  <button class="btn-outline">Chỉnh sửa</button>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Member Card 3 -->
+            <div class="member-card">
+              <div class="member-header">
+                <div class="member-avatar">
+                  <img src="/placeholder.svg?height=80&width=80" alt="Member" />
+                </div>
+                <h3 class="member-name">Ai Binh</h3>
+                <div class="member-role">Content Writer</div>
+                <span class="member-status vacation">Đang nghỉ phép</span>
+              </div>
+              <div class="member-body">
+                <div class="member-info-grid">
+                  <div class="member-info-item">
+                    <span class="member-info-label">Email</span>
+                    <span class="member-info-value">aibinh@example.com</span>
+                  </div>
+                  <div class="member-info-item">
+                    <span class="member-info-label">Điện thoại</span>
+                    <span class="member-info-value">+84 456 789 123</span>
+                  </div>
+                  <div class="member-info-item">
+                    <span class="member-info-label">Ngày tham gia</span>
+                    <span class="member-info-value">10/03/2025</span>
+                  </div>
+                  <div class="member-info-item">
+                    <span class="member-info-label">Vị trí</span>
+                    <span class="member-info-value">Đà Nẵng</span>
+                  </div>
+                </div>
+                
+                <div class="member-stats">
+                  <div class="member-stat-item">
+                    <div class="member-stat-value">5</div>
+                    <div class="member-stat-label">Dự án</div>
+                  </div>
+                  <div class="member-stat-item">
+                    <div class="member-stat-value">23</div>
+                    <div class="member-stat-label">Nhiệm vụ</div>
+                  </div>
+                  <div class="member-stat-item">
+                    <div class="member-stat-value">95%</div>
+                    <div class="member-stat-label">Hoàn thành</div>
+                  </div>
+                </div>
+                
+                <div class="member-skills">
+                  <div class="skills-label">Kỹ năng</div>
+                  <div class="skills-list">
+                    <span class="skill-tag">Content Writing</span>
+                    <span class="skill-tag">SEO</span>
+                    <span class="skill-tag">Copywriting</span>
+                    <span class="skill-tag">Social Media</span>
+                  </div>
+                </div>
+                
+                <div class="member-projects">
+                  <div class="projects-label">Dự án hiện tại</div>
+                  <div class="projects-list">
+                    <div class="project-item">
+                      <span class="project-name">Marketing Campaign</span>
+                      <span class="project-role">Lead Writer</span>
+                    </div>
+                    <div class="project-item">
+                      <span class="project-name">Website Redesign</span>
+                      <span class="project-role">Content Strategist</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="member-actions">
+                  <button class="btn-outline">Chi tiết</button>
+                  <button class="btn-outline">Chỉnh sửa</button>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Member Card 4 -->
+            <div class="member-card">
+              <div class="member-header">
+                <div class="member-avatar">
+                  <img src="/placeholder.svg?height=80&width=80" alt="Member" />
+                </div>
+                <h3 class="member-name">Ai James</h3>
+                <div class="member-role">QA Tester</div>
+                <span class="member-status active">Đang hoạt động</span>
+              </div>
+              <div class="member-body">
+                <div class="member-info-grid">
+                  <div class="member-info-item">
+                    <span class="member-info-label">Email</span>
+                    <span class="member-info-value">aijames@example.com</span>
+                  </div>
+                  <div class="member-info-item">
+                    <span class="member-info-label">Điện thoại</span>
+                    <span class="member-info-value">+84 789 123 456</span>
+                  </div>
+                  <div class="member-info-item">
+                    <span class="member-info-label">Ngày tham gia</span>
+                    <span class="member-info-value">05/04/2025</span>
+                  </div>
+                  <div class="member-info-item">
+                    <span class="member-info-label">Vị trí</span>
+                    <span class="member-info-value">Hà Nội</span>
+                  </div>
+                </div>
+                
+                <div class="member-stats">
+                  <div class="member-stat-item">
+                    <div class="member-stat-value">7</div>
+                    <div class="member-stat-label">Dự án</div>
+                  </div>
+                  <div class="member-stat-item">
+                    <div class="member-stat-value">31</div>
+                    <div class="member-stat-label">Nhiệm vụ</div>
+                  </div>
+                  <div class="member-stat-item">
+                    <div class="member-stat-value">90%</div>
+                    <div class="member-stat-label">Hoàn thành</div>
+                  </div>
+                </div>
+                
+                <div class="member-skills">
+                  <div class="skills-label">Kỹ năng</div>
+                  <div class="skills-list">
+                    <span class="skill-tag">Manual Testing</span>
+                    <span class="skill-tag">Automation</span>
+                    <span class="skill-tag">Selenium</span>
+                    <span class="skill-tag">JIRA</span>
+                  </div>
+                </div>
+                
+                <div class="member-projects">
+                  <div class="projects-label">Dự án hiện tại</div>
+                  <div class="projects-list">
+                    <div class="project-item">
+                      <span class="project-name">E-commerce Platform</span>
+                      <span class="project-role">Lead QA</span>
+                    </div>
+                    <div class="project-item">
+                      <span class="project-name">Mobile App Development</span>
+                      <span class="project-role">Tester</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="member-actions">
+                  <button class="btn-outline">Chi tiết</button>
+                  <button class="btn-outline">Chỉnh sửa</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Pagination -->
+          <div class="pagination">
+            <div class="pagination-item disabled">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </div>
+            <div class="pagination-item active">1</div>
+            <div class="pagination-item">2</div>
+            <div class="pagination-item">3</div>
+            <div class="pagination-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+        // Set current date
+        const currentDate = new Date().toLocaleDateString('vi-VN');
+        document.querySelector('.date-display').textContent = currentDate;
+        
+        // Toggle view between grid and table
+        document.addEventListener('DOMContentLoaded', function() {
+            const gridView = document.querySelector('.members-grid');
+            const tableView = document.querySelector('.members-table-container');
+            const viewButtons = document.querySelectorAll('.view-btn');
+            
+            viewButtons.forEach((btn, index) => {
+                btn.addEventListener('click', function() {
+                    viewButtons.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    if (index === 0) { // Grid view
+                        gridView.style.display = 'grid';
+                        tableView.style.display = 'none';
+                    } else { // Table view
+                        gridView.style.display = 'none';
+                        tableView.style.display = 'block';
+                    }
+                });
+            });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

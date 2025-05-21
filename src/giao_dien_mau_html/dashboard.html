@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PMKey Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="header">
+      <div class="header-left">
+        <!-- Empty left section -->
+      </div>
+      
+      <!-- Centered search bar -->
+      <div class="search-container-wrapper">
+        <div class="search-container">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" placeholder="Tìm kiếm..." class="search-input" />
+        </div>
+      </div>
+      
+      <div class="header-right">
+        <div class="header-actions">
+          <button class="action-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+            <span class="notification-badge">5</span>
+          </button>
+          
+          <button class="action-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+            </svg>
+            <span class="notification-badge">3</span>
+          </button>
+        </div>
+        
+        <div class="date-display">
+          20/05/2025
+        </div>
+      </div>
+    </header>
+    <div class="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+          <span>PMKey</span>
+        </div>
+      </div>
+
+      <div class="sidebar-content">
+        <div class="profile-section">
+          <div class="avatar">
+            <img src="/placeholder.svg?height=50&width=50" alt="Profile" />
+          </div>
+          <div class="profile-info">
+            <h3>Tên</h3>
+            <p>Leader</p>
+          </div>
+        </div>
+
+        <div class="menu-section">
+          <ul class="menu-list">
+            <li>
+              <a href="#" class="active">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="14" width="7" height="7"></rect>
+                  <rect x="3" y="14" width="7" height="7"></rect>
+                </svg>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li>
+              <a href="project-management.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                </svg>
+                <span>Dự án</span>
+              </a>
+            </li>
+            <li>
+              <a href="task-management.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 11l3 3L22 4"></path>
+                  <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                </svg>
+                <span>Nhiệm vụ</span>
+              </a>
+            </li>
+            <li>
+              <a href="member-management.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                <span>Nhân viên</span>
+              </a>
+            </li>
+           
+          </ul>
+        </div>
+
+        <div class="stats-section">
+          <div class="stat-item">
+            <div class="stat-label">SỐ LƯỢNG THÀNH VIÊN</div>
+            <div class="stat-value">
+              <span>70</span>
+              <div class="badge">+5</div>
+            </div>
+          </div>
+
+          <div class="stat-item">
+            <div class="stat-label">TỔNG DỰ ÁN</div>
+            <div class="stat-value">
+              <span>1,205</span>
+            </div>
+          </div>
+
+          <div class="stat-item">
+            <div class="stat-label">TASK ĐANG XỬ LÝ</div>
+            <div class="stat-value">
+              <span>45</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="user-menu">
+          <div class="avatar-small">
+            <img src="/placeholder.svg?height=40&width=40" alt="User" />
+          </div>
+          <div class="user-info">
+            <span class="user-name">User</span>
+            <span class="user-role">Team Leader</span>
+          </div>
+          <button class="logout-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+              <polyline points="16 17 21 12 16 7"></polyline>
+              <line x1="21" y1="12" x2="9" y2="12"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="dashboard-layout">
+      <div class="main-content">
+        <div class="content-wrapper">
+          <div class="page-header">
+            <h1 class="page-title">Dashboard</h1>
+            <!-- <button class="btn-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+              Thêm dự án mới
+            </button> -->
+          </div>
+          
+          <div class="dashboard-grid">
+            <!-- Project Cost Section -->
+            <section class="dashboard-card project-costs">
+              <div class="card-header">
+                <h2 class="card-title">Chi phí dự án</h2>
+                <div class="card-actions">
+                  <button class="btn-outline">Xuất</button>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="cost-grid">
+                  <div class="cost-item">
+                    <div class="cost-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="1" x2="12" y2="23"></line>
+                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                      </svg>
+                    </div>
+                    <div class="cost-content">
+                      <div class="cost-label">Chi phí dự án</div>
+                      <div class="cost-value">₫2,113,507.00</div>
+                    </div>
+                  </div>
+                  <div class="cost-item">
+                    <div class="cost-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                      </svg>
+                    </div>
+                    <div class="cost-content">
+                      <div class="cost-label">Hiện tại đã chi</div>
+                      <div class="cost-value">₫96,768.00</div>
+                    </div>
+                  </div>
+                  <div class="cost-item">
+                    <div class="cost-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                      </svg>
+                    </div>
+                    <div class="cost-content">
+                      <div class="cost-label">Còn lại</div>
+                      <div class="cost-value">₫2,016,739.00</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="budget-progress">
+                  <div class="progress-label">
+                    <span>Tiến độ sử dụng ngân sách</span>
+                    <span>25%</span>
+                  </div>
+                  <div class="progress-bar">
+                    <div class="progress-fill" style="width: 25%"></div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Team Members Section -->
+            <section class="dashboard-card team-members">
+              <div class="card-header">
+                <h2 class="card-title">Thành viên của team</h2>
+                <div class="card-actions">
+                  <button class="btn-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+                    </svg>
+                  </button>
+                  <button class="btn-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="1"></circle>
+                      <circle cx="19" cy="12" r="1"></circle>
+                      <circle cx="5" cy="12" r="1"></circle>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="card-body">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Khu vực</th>
+                      <th>Số lượng nhân viên</th>
+                      <th>Nhân viên đang tạm nghỉ</th>
+                      <th>Trạng thái</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>East</td>
+                      <td>20</td>
+                      <td>4</td>
+                      <td><span class="status-badge success">Hoạt động</span></td>
+                    </tr>
+                    <tr>
+                      <td>West</td>
+                      <td>15</td>
+                      <td>8</td>
+                      <td><span class="status-badge warning">Cần hỗ trợ</span></td>
+                    </tr>
+                    <tr>
+                      <td>South</td>
+                      <td>17</td>
+                      <td>1</td>
+                      <td><span class="status-badge success">Hoạt động</span></td>
+                    </tr>
+                    <tr>
+                      <td>North</td>
+                      <td>18</td>
+                      <td>0</td>
+                      <td><span class="status-badge success">Hoạt động</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            <!-- Team Status Section -->
+            <section class="dashboard-card team-status">
+              <div class="card-header">
+                <h2 class="card-title">Trạng thái của team</h2>
+                <div class="card-actions">
+                  <button class="btn-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="1"></circle>
+                      <circle cx="19" cy="12" r="1"></circle>
+                      <circle cx="5" cy="12" r="1"></circle>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="status-grid">
+                  <div class="status-region">
+                    <div class="region-header">East</div>
+                    <div class="member-status">
+                      <div class="member-avatar">
+                        <img src="/placeholder.svg?height=40&width=40" alt="Member" />
+                      </div>
+                      <div class="member-info">
+                        <div class="member-name">Ai Long</div>
+                        <div class="status-badge available">Available</div>
+                      </div>
+                    </div>
+                    <div class="member-status">
+                      <div class="member-avatar">
+                        <img src="/placeholder.svg?height=40&width=40" alt="Member" />
+                      </div>
+                      <div class="member-info">
+                        <div class="member-name">Kawasaki</div>
+                        <div class="status-badge available">Available</div>
+                      </div>
+                    </div>
+                    <div class="member-status">
+                      <div class="member-avatar">
+                        <img src="/placeholder.svg?height=40&width=40" alt="Member" />
+                      </div>
+                      <div class="member-info">
+                        <div class="member-name">Ai Binh</div>
+                        <div class="status-badge busy">Busy</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="status-region">
+                    <div class="region-header">West</div>
+                    <div class="member-status">
+                      <div class="member-avatar">
+                        <img src="/placeholder.svg?height=40&width=40" alt="Member" />
+                      </div>
+                      <div class="member-info">
+                        <div class="member-name">Ai James</div>
+                        <div class="status-badge busy">Busy</div>
+                      </div>
+                    </div>
+                    <div class="member-status">
+                      <div class="member-avatar">
+                        <img src="/placeholder.svg?height=40&width=40" alt="Member" />
+                      </div>
+                      <div class="member-info">
+                        <div class="member-name">Nguyen Van A</div>
+                        <div class="status-badge available">Available</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="status-region">
+                    <div class="region-header">South</div>
+                    <div class="member-status">
+                      <div class="member-avatar">
+                        <img src="/placeholder.svg?height=40&width=40" alt="Member" />
+                      </div>
+                      <div class="member-info">
+                        <div class="member-name">Tran Thi B</div>
+                        <div class="status-badge available">Available</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="status-region">
+                    <div class="region-header">North</div>
+                    <div class="member-status">
+                      <div class="member-avatar">
+                        <img src="/placeholder.svg?height=40&width=40" alt="Member" />
+                      </div>
+                      <div class="member-info">
+                        <div class="member-name">Le Van C</div>
+                        <div class="status-badge available">Available</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            
+            <!-- Active Projects Section -->
+            <section class="dashboard-card active-projects">
+              <div class="card-header">
+                <h2 class="card-title">Dự án đang hoạt động</h2>
+                <div class="card-actions">
+                  <button class="btn-text">Xem tất cả</button>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="project-list">
+                  <div class="project-item">
+                    <div class="project-info">
+                      <h3>Website Redesign</h3>
+                      <p>Deadline: 15/06/2025</p>
+                    </div>
+                    <div class="project-progress">
+                      <div class="progress-bar">
+                        <div class="progress-fill" style="width: 75%"></div>
+                      </div>
+                      <span class="progress-text">75%</span>
+                    </div>
+                    <div class="project-team">
+                      <div class="team-avatars">
+                        <div class="avatar-stack">
+                          <img src="/placeholder.svg?height=30&width=30" alt="Team Member" />
+                          <img src="/placeholder.svg?height=30&width=30" alt="Team Member" />
+                          <img src="/placeholder.svg?height=30&width=30" alt="Team Member" />
+                          <span class="avatar-more">+2</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="project-item">
+                    <div class="project-info">
+                      <h3>Mobile App Development</h3>
+                      <p>Deadline: 30/07/2025</p>
+                    </div>
+                    <div class="project-progress">
+                      <div class="progress-bar">
+                        <div class="progress-fill" style="width: 45%"></div>
+                      </div>
+                      <span class="progress-text">45%</span>
+                    </div>
+                    <div class="project-team">
+                      <div class="team-avatars">
+                        <div class="avatar-stack">
+                          <img src="/placeholder.svg?height=30&width=30" alt="Team Member" />
+                          <img src="/placeholder.svg?height=30&width=30" alt="Team Member" />
+                          <span class="avatar-more">+3</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="project-item">
+                    <div class="project-info">
+                      <h3>Marketing Campaign</h3>
+                      <p>Deadline: 10/05/2025</p>
+                    </div>
+                    <div class="project-progress">
+                      <div class="progress-bar">
+                        <div class="progress-fill" style="width: 90%"></div>
+                      </div>
+                      <span class="progress-text">90%</span>
+                    </div>
+                    <div class="project-team">
+                      <div class="team-avatars">
+                        <div class="avatar-stack">
+                          <img src="/placeholder.svg?height=30&width=30" alt="Team Member" />
+                          <img src="/placeholder.svg?height=30&width=30" alt="Team Member" />
+                          <img src="/placeholder.svg?height=30&width=30" alt="Team Member" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+        // Set current date
+        const currentDate = new Date().toLocaleDateString('vi-VN');
+        document.querySelector('.date-display').textContent = currentDate;
+        
+        // Add animation to progress bars
+        document.addEventListener('DOMContentLoaded', function() {
+            const progressBars = document.querySelectorAll('.progress-fill');
+            progressBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 300);
+            });
+        });
+    </script>
+</body>
+</html>

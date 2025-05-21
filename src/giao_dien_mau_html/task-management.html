@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PMKey - Quản lý nhiệm vụ</title>
+    <link rel="stylesheet" href="css/task-management.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+      <div class="header-left">
+        <!-- Empty left section -->
+      </div>
+      
+      <!-- Centered search bar -->
+      <div class="search-container-wrapper">
+        <div class="search-container">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" placeholder="Tìm kiếm nhiệm vụ..." class="search-input" />
+        </div>
+      </div>
+      
+      <div class="header-right">
+        <div class="header-actions">
+          <button class="action-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+            <span class="notification-badge">5</span>
+          </button>
+          
+          <button class="action-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+            </svg>
+            <span class="notification-badge">3</span>
+          </button>
+        </div>
+        
+        <div class="date-display">
+          20/05/2025
+        </div>
+      </div>
+    </header>
+    <div class="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+          <span>PMKey</span>
+        </div>
+      </div>
+
+      <div class="sidebar-content">
+        <div class="profile-section">
+          <div class="avatar">
+            <img src="/placeholder.svg?height=50&width=50" alt="Profile" />
+          </div>
+          <div class="profile-info">
+            <h3>Tên</h3>
+            <p>Leader</p>
+          </div>
+        </div>
+
+        <div class="menu-section">
+          <ul class="menu-list">
+            <li>
+              <a href="dashboard.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="14" width="7" height="7"></rect>
+                  <rect x="3" y="14" width="7" height="7"></rect>
+                </svg>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li>
+              <a href="project-management.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                </svg>
+                <span>Dự án</span>
+              </a>
+            </li>
+            <li>
+              <a href="task-management.html" class="active">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 11l3 3L22 4"></path>
+                  <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                </svg>
+                <span>Nhiệm vụ</span>
+              </a>
+            </li>
+            <li>
+              <a href="member-management.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                <span>Thành viên</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="stats-section">
+          <div class="stat-item">
+            <div class="stat-label">SỐ LƯỢNG THÀNH VIÊN</div>
+            <div class="stat-value">
+              <span>70</span>
+              <div class="badge">+5</div>
+            </div>
+          </div>
+
+          <div class="stat-item">
+            <div class="stat-label">TỔNG DỰ ÁN</div>
+            <div class="stat-value">
+              <span>1,205</span>
+            </div>
+          </div>
+
+          <div class="stat-item">
+            <div class="stat-label">TASK ĐANG XỬ LÝ</div>
+            <div class="stat-value">
+              <span>45</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="user-menu">
+          <div class="avatar-small">
+            <img src="/placeholder.svg?height=40&width=40" alt="User" />
+          </div>
+          <div class="user-info">
+            <span class="user-name">User</span>
+            <span class="user-role">Team Leader</span>
+          </div>
+          <button class="logout-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+              <polyline points="16 17 21 12 16 7"></polyline>
+              <line x1="21" y1="12" x2="9" y2="12"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="dashboard-layout">
+      <div class="main-content">
+        <div class="content-wrapper">
+          <div class="page-header">
+            <h1 class="page-title">Quản lý nhiệm vụ</h1>
+            <button class="btn-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+              Thêm nhiệm vụ mới
+            </button>
+          </div>
+          
+          <div class="filter-bar">
+            <div class="filter-options">
+              <select class="filter-select">
+                <option value="">Tất cả dự án</option>
+                <option value="website">Website Redesign</option>
+                <option value="mobile">Mobile App Development</option>
+                <option value="marketing">Marketing Campaign</option>
+                <option value="ecommerce">E-commerce Platform</option>
+              </select>
+              <select class="filter-select">
+                <option value="">Tất cả mức độ ưu tiên</option>
+                <option value="high">Cao</option>
+                <option value="medium">Trung bình</option>
+                <option value="low">Thấp</option>
+              </select>
+              <select class="filter-select">
+                <option value="">Tất cả người được giao</option>
+                <option value="user1">Ai Long</option>
+                <option value="user2">Kawasaki</option>
+                <option value="user3">Ai Binh</option>
+                <option value="user4">Ai James</option>
+              </select>
+            </div>
+            <div class="view-options">
+              <button class="view-btn active">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="8" y1="6" x2="21" y2="6"></line>
+                  <line x1="8" y1="12" x2="21" y2="12"></line>
+                  <line x1="8" y1="18" x2="21" y2="18"></line>
+                  <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                  <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                  <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                </svg>
+              </button>
+              <button class="view-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="14" width="7" height="7"></rect>
+                  <rect x="3" y="14" width="7" height="7"></rect>
+                </svg>
+              </button>
+            </div>
+          </div>
+          
+          <div class="task-board">
+            <!-- To Do Column -->
+            <div class="task-column">
+              <div class="column-header">
+                <div class="column-title">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="16"></line>
+                    <line x1="8" y1="12" x2="16" y2="12"></line>
+                  </svg>
+                  Cần làm
+                </div>
+                <div class="column-count">4</div>
+              </div>
+              <div class="column-content">
+                <!-- Task Card 1 -->
+                <div class="task-card high-priority">
+                  <div class="task-header">
+                    <h3 class="task-title">Thiết kế giao diện người dùng</h3>
+                    <span class="task-priority high">Cao</span>
+                  </div>
+                  <p class="task-description">Thiết kế giao diện người dùng cho trang chủ và trang sản phẩm.</p>
+                  <div class="task-meta">
+                    <div class="task-project">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                      </svg>
+                      Website Redesign
+                    </div>
+                    <div class="task-due">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                      </svg>
+                      25/05/2025
+                    </div>
+                  </div>
+                  <div class="task-assignee">
+                    <div class="assignee-avatar">
+                      <img src="/placeholder.svg?height=24&width=24" alt="Assignee" />
+                    </div>
+                    <div class="assignee-name">Ai Long</div>
+                  </div>
+                </div>
+                
+                <!-- Task Card 2 -->
+                <div class="task-card medium-priority">
+                  <div class="task-header">
+                    <h3 class="task-title">Phát triển API</h3>
+                    <span class="task-priority medium">Trung bình</span>
+                  </div>
+                  <p class="task-description">Phát triển API cho tính năng đăng nhập và đăng ký.</p>
+                  <div class="task-meta">
+                    <div class="task-project">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                      </svg>
+                      Mobile App Development
+                    </div>
+                    <div class="task-due">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                      </svg>
+                      30/05/2025
+                    </div>
+                  </div>
+                  <div class="task-assignee">
+                    <div class="assignee-avatar">
+                      <img src="/placeholder.svg?height=24&width=24" alt="Assignee" />
+                    </div>
+                    <div class="assignee-name">Kawasaki</div>
+                  </div>
+                </div>
+                
+                <!-- Task Card 3 -->
+                <div class="task-card low-priority">
+                  <div class="task-header">
+                    <h3 class="task-title">Viết nội dung blog</h3>
+                    <span class="task-priority low">Thấp</span>
+                  </div>
+                  <p class="task-description">Viết 5 bài blog về các xu hướng mới nhất trong ngành.</p>
+                  <div class="task-meta">
+                    <div class="task-project">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                      </svg>
+                      Marketing Campaign
+                    </div>
+                    <div class="task-due">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                      </svg>
+                      05/06/2025
+                    </div>
+                  </div>
+                  <div class="task-assignee">
+                    <div class="assignee-avatar">
+                      <img src="/placeholder.svg?height=24&width=24" alt="Assignee" />
+                    </div>
+                    <div class="assignee-name">Ai Binh</div>
+                  </div>
+                </div>
+                
+                <!-- Task Card 4 -->
+                <div class="task-card medium-priority">
+                  <div class="task-header">
+                    <h3 class="task-title">Nghiên cứu thị trường</h3>
+                    <span class="task-priority medium">Trung bình</span>
+                  </div>
+                  <p class="task-description">Phân tích đối thủ cạnh tranh và xu hướng thị trường.</p>
+                  <div class="task-meta">
+                    <div class="task-project">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                      </svg>
+                      E-commerce Platform
+                    </div>
+                    <div class="task-due">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                      </svg>
+                      10/06/2025
+                    </div>
+                  </div>
+                  <div class="task-assignee">
+                    <div class="assignee-avatar">
+                      <img src="/placeholder.svg?height=24&width=24" alt="Assignee" />
+                    </div>
+                    <div class="assignee-name">Ai James</div>
+                  </div>
+                </div>
+                
+                <button class="add-task-btn" data-bs-toggle="modal" data-bs-target="#addTaskModal">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
+                  Thêm nhiệm vụ
+                </button>
+              </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="addTaskModal" tabindex="-1" aria-labelledby="addTaskModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                  <form id="addTaskForm">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="addTaskModalLabel">Thêm Nhiệm Vụ Mới</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="mb-3">
+                        <label for="taskName" class="form-label">Tên Nhiệm Vụ</label>
+                        <input type="text" class="form-control" id="taskName" name="taskName" required>
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="taskDescription" class="form-label">Mô Tả</label>
+                        <textarea class="form-control" id="taskDescription" name="taskDescription" rows="3"></textarea>
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="taskType" class="form-label">Công Việc</label>
+                        <select class="form-select" id="taskType" name="taskType">
+                          <option value="Web Design">Web Design</option>
+                          <option value="E-commerce Platform">E-commerce Platform</option>
+                          <option value="Mobile App">Mobile App</option>
+                          <option value="Khác">Khác</option>
+                        </select>
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="priority" class="form-label">Mức Độ Ưu Tiên</label>
+                        <select class="form-select" id="priority" name="priority">
+                          <option value="Thấp">Thấp</option>
+                          <option value="Trung bình">Trung bình</option>
+                          <option value="Cao">Cao</option>
+                        </select>
+                      </div>
+
+                      <div class="mb-3">
+                        <label class="form-label">Chọn Nhân Viên</label>
+                        <div class="row">
+                          <!-- Danh sách nhân viên mẫu -->
+                          <div class="col-md-4">
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="1" id="emp1" name="employees[]">
+                              <label class="form-check-label" for="emp1">Nguyễn Văn A</label>
+                            </div>
+                          </div>
+                          <div class="col-md-4">
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="2" id="emp2" name="employees[]">
+                              <label class="form-check-label" for="emp2">Trần Thị B</label>
+                            </div>
+                          </div>
+                          <div class="col-md-4">
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="3" id="emp3" name="employees[]">
+                              <label class="form-check-label" for="emp3">Phạm Văn C</label>
+                            </div>
+                          </div>
+                          <!-- Thêm nhiều nhân viên tùy theo danh sách có sẵn -->
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                      <button type="submit" class="btn btn-primary">Thêm Nhiệm Vụ</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            
+            <!-- In Progress Column -->
+            <div class="task-column">
+              <div class="column-header">
+                <div class="column-title">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 8v4M18 16h.01M6 8l12 4-12 4z"></path>
+                  </svg>
+                  Đang thực hiện
+                </div>
+                <div class="column-count">3</div>
+              </div>
+              <div class="column-content">
+                <!-- Task Card 1 -->
+                <div class="task-card high-priority">
+                  <div class="task-header">
+                    <h3 class="task-title">Phát triển tính năng thanh toán</h3>
+                    <span class="task-priority high">Cao</span>
+                  </div>
+                  <p class="task-description">Tích hợp cổng thanh toán và xử lý giao dịch.</p>
+                  <div class="task-meta">
+                    <div class="task-project">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                      </svg>
+                      E-commerce Platform
+                    </div>
+                    <div class="task-due overdue">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                      </svg>
+                      15/05/2025 (Quá hạn)
+                    </div>
+                  </div>
+                  <div class="task-assignee">
+                    <div class="assignee-avatar">
+                      <img src="/placeholder.svg?height=24&width=24" alt="Assignee" />
+                    </div>
+                    <div class="assignee-name">Kawasaki</div>
+                  </div>
+                </div>
+                
+                <!-- Task Card 2 -->
+                <div class="task-card medium-priority">
+                  <div class="task-header">
+                    <h3 class="task-title">Tối ưu hóa SEO</h3>
+                    <span class="task-priority medium">Trung bình</span>
+                  </div>
+                  <p class="task-description">Tối ưu hóa các trang web cho công cụ tìm kiếm.</p>
+                  <div class="task-meta">
+                    <div class="task-project">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                      </svg>
+                      Website Redesign
+                    </div>
+                    <div class="task-due">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                      </svg>
+                      28/05/2025
+                    </div>
+                  </div>
+                  <div class="task-assignee">
+                    <div class="assignee-avatar">
+                      <img src="/placeholder.svg?height=24&width=24" alt="Assignee" />
+                    </div>
+                    <div class="assignee-name">Ai Binh</div>
+                  </div>
+                </div>
+                
+                <!-- Task Card 3 -->
+                <div class="task-card low-priority">
+                  <div class="task-header">
+                    <h3 class="task-title">Thiết kế email marketing</h3>
+                    <span class="task-priority low">Thấp</span>
+                  </div>
+                  <p class="task-description">Thiết kế mẫu email cho chiến dịch marketing.</p>
+                  <div class="task-meta">
+                    <div class="task-project">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                      </svg>
+                      Marketing Campaign
+                    </div>
+                    <div class="task-due">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                      </svg>
+                      01/06/2025
+                    </div>
+                  </div>
+                  <div class="task-assignee">
+                    <div class="assignee-avatar">
+                      <img src="/placeholder.svg?height=24&width=24" alt="Assignee" />
+                    </div>
+                    <div class="assignee-name">Ai Long</div>
+                  </div>
+                </div>
+                
+                <button class="add-task-btn" data-bs-toggle="modal" data-bs-target="#addTaskModal">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
+                  Thêm nhiệm vụ
+                </button>
+              </div>
+            </div>
+            
+            <!-- Review Column -->
+            <div class="task-column">
+              <div class="column-header">
+                <div class="column-title">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                  </svg>
+                  Đang kiểm tra
+                </div>
+                <div class="column-count">2</div>
+              </div>
+              <div class="column-content">
+                <!-- Task Card 1 -->
+                <div class="task-card high-priority">
+                  <div class="task-header">
+                    <h3 class="task-title">Kiểm thử ứng dụng di động</h3>
+                    <span class="task-priority high">Cao</span>
+                  </div>
+                  <p class="task-description">Kiểm thử ứng dụng di động trên các thiết bị khác nhau.</p>
+                  <div class="task-meta">
+                    <div class="task-project">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                      </svg>
+                      Mobile App Development
+                    </div>
+                    <div class="task-due">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                      </svg>
+                      25/05/2025
+                    </div>
+                  </div>
+                  <div class="task-assignee">
+                    <div class="assignee-avatar">
+                      <img src="/placeholder.svg?height=24&width=24" alt="Assignee" />
+                    </div>
+                    <div class="assignee-name">Ai James</div>
+                  </div>
+                </div>
+                
+                <!-- Task Card 2 -->
+                <div class="task-card medium-priority">
+                  <div class="task-header">
+                    <h3 class="task-title">Đánh giá nội dung website</h3>
+                    <span class="task-priority medium">Trung bình</span>
+                  </div>
+                  <p class="task-description">Đánh giá và chỉnh sửa nội dung trên trang web.</p>
+                  <div class="task-meta">
+                    <div class="task-project">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                      </svg>
+                      Website Redesign
+                    </div>
+                    <div class="task-due">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                      </svg>
+                      27/05/2025
+                    </div>
+                  </div>
+                  <div class="task-assignee">
+                    <div class="assignee-avatar">
+                      <img src="/placeholder.svg?height=24&width=24" alt="Assignee" />
+                    </div>
+                    <div class="assignee-name">Ai Binh</div>
+                  </div>
+                </div>
+                
+                <button class="add-task-btn" data-bs-toggle="modal" data-bs-target="#addTaskModal">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
+                  Thêm nhiệm vụ
+                </button>
+              </div>
+            </div>
+            
+            <!-- Completed Column -->
+            <div class="task-column">
+              <div class="column-header">
+                <div class="column-title">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                  </svg>
+                  Hoàn thành
+                </div>
+                <div class="column-count">3</div>
+              </div>
+              <div class="column-content">
+                <!-- Task Card 1 -->
+                <div class="task-card high-priority">
+                  <div class="task-header">
+                    <h3 class="task-title">Thiết kế logo</h3>
+                    <span class="task-priority high">Cao</span>
+                  </div>
+                  <p class="task-description">Thiết kế logo mới cho thương hiệu.</p>
+                  <div class="task-meta">
+                    <div class="task-project">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                      </svg>
+                      Marketing Campaign
+                    </div>
+                    <div class="task-due">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                      </svg>
+                      10/05/2025
+                    </div>
+                  </div>
+                  <div class="task-assignee">
+                    <div class="assignee-avatar">
+                      <img src="/placeholder.svg?height=24&width=24" alt="Assignee" />
+                    </div>
+                    <div class="assignee-name">Ai Long</div>
+                  </div>
+                </div>
+                
+                <!-- Task Card 2 -->
+                <div class="task-card medium-priority">
+                  <div class="task-header">
+                    <h3 class="task-title">Cài đặt môi trường phát triển</h3>
+                    <span class="task-priority medium">Trung bình</span>
+                  </div>
+                  <p class="task-description">Cài đặt và cấu hình môi trường phát triển cho dự án.</p>
+                  <div class="task-meta">
+                    <div class="task-project">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                      </svg>
+                      Mobile App Development
+                    </div>
+                    <div class="task-due">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                      </svg>
+                      05/05/2025
+                    </div>
+                  </div>
+                  <div class="task-assignee">
+                    <div class="assignee-avatar">
+                      <img src="/placeholder.svg?height=24&width=24" alt="Assignee" />
+                    </div>
+                    <div class="assignee-name">Kawasaki</div>
+                  </div>
+                </div>
+                
+                <!-- Task Card 3 -->
+                <div class="task-card low-priority">
+                  <div class="task-header">
+                    <h3 class="task-title">Phân tích yêu cầu</h3>
+                    <span class="task-priority low">Thấp</span>
+                  </div>
+                  <p class="task-description">Phân tích và tài liệu hóa các yêu cầu của dự án.</p>
+                  <div class="task-meta">
+                    <div class="task-project">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                      </svg>
+                      E-commerce Platform
+                    </div>
+                    <div class="task-due">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                      </svg>
+                      01/05/2025
+                    </div>
+                  </div>
+                  <div class="task-assignee">
+                    <div class="assignee-avatar">
+                      <img src="/placeholder.svg?height=24&width=24" alt="Assignee" />
+                    </div>
+                    <div class="assignee-name">Ai James</div>
+                  </div>
+                </div>
+                
+                <button class="add-task-btn" data-bs-toggle="modal" data-bs-target="#addTaskModal">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
+                  Thêm nhiệm vụ
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+        // Set current date
+        const currentDate = new Date().toLocaleDateString('vi-VN');
+        document.querySelector('.date-display').textContent = currentDate;
+        
+        // Add animation to progress bars
+        document.addEventListener('DOMContentLoaded', function() {
+            const progressBars = document.querySelectorAll('.progress-fill');
+            progressBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 300);
+            });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Đăng nhập</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #f2f6ff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .top-banner {
+      width: 100%;
+      height: 100vh;
+      background: url('banner1.jpg') no-repeat center center/cover;
+      position: relative;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4); /* tối banner để form nổi bật */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .form-container {
+      width: 100%;
+      max-width: 400px;
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      text-align: center;
+      z-index: 1;
+    }
+
+    .form-container h2 {
+      margin-bottom: 20px;
+      color: #0b2b52;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .remember-forgot {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .remember-forgot label {
+      display: flex;
+      align-items: center;
+    }
+
+    .remember-forgot a {
+      text-decoration: none;
+      color: #007bff;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-bottom: 15px;
+    }
+
+    .divider {
+      text-align: center;
+      margin: 15px 0;
+      color: #999;
+      position: relative;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 40%;
+      height: 1px;
+      background: #ccc;
+    }
+
+    .divider::before {
+      left: 0;
+    }
+
+    .divider::after {
+      right: 0;
+    }
+
+    .social-buttons {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .social-buttons button {
+      flex: 1;
+      background: #e7f1ff;
+      color: #0056b3;
+      border: 1px solid #b3d7ff;
+    }
+
+    .register {
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .register a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    header {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-weight: bold;
+      font-size: 20px;
+      color: white;
+      z-index: 2;
+    }
+
+    nav {
+      position: absolute;
+      top: 20px;
+      right: 40px;
+      z-index: 2;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+    }
+
+    @media (max-width: 600px) {
+      .form-container {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-banner">
+    <div class="overlay">
+      <header>azmedia.com.vn</header>
+      <nav>
+       <a href="login.html">Đăng Nhập</a>
+        <a href="#">API</a>
+        <a href="register.html">Đăng Ký</a>
+      </nav>
+
+      <div class="form-container">
+        <h2>Đăng Nhập</h2>
+        <input type="text" placeholder="Tài khoản" id="username">
+        <input type="password" placeholder="Mật khẩu" id="password">
+        <div class="remember-forgot">
+          <label><input type="checkbox" id="remember"> Ghi nhớ</label>
+          <a href="forgot.html">Quên mật khẩu?</a>
+        </div>
+        <button onclick="login()">Đăng Nhập</button>
+        <div class="divider">Hoặc</div>
+        <div class="social-buttons">
+          <button>G Google Login</button>
+          <button>Xem Demo</button>
+        </div>
+        <div class="register">
+          Bạn chưa có tài khoản? <a href="register.html">Đăng Ký</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function login() {
+      const user = document.getElementById("username").value.trim();
+      const pass = document.getElementById("password").value.trim();
+      const storedUser = localStorage.getItem("user");
+      const storedPass = localStorage.getItem("pass");
+
+      if (user === storedUser && pass === storedPass) {
+        alert("Đăng nhập thành công!");
+      } else {
+        alert("Tên đăng nhập hoặc mật khẩu sai.");
+      }
+    }
+  </script>
+
+</body>
+</html>
